@@ -7,7 +7,8 @@ var xbeeAPI = new xbee_api.XBeeAPI({
   api_mode: 2
 });
 
-
+let compteur = 3;
+let availablePlaces = [1,2,3];
 let serialport = new SerialPort("COM3", {
   baudRate: 9600,
 }, function (err) {
@@ -34,7 +35,7 @@ serialport.on("open", function () {
     command: "NI",
     commandParameter: [],
   };
-  xbeeAPI.builder.write(frame_obj);
+  //xbeeAPI.builder.write(frame_obj);
 
 });
 
@@ -69,7 +70,43 @@ xbeeAPI.parser.on("data", function (frame) {
 
   } else {
     let dataReceived = String.fromCharCode.apply(null, frame.commandData);
-    console.log(dataReceived);
+    if(frame.data) {
+      switch(frame.data[5]) {
+        case 0:
+          compteur =3;
+          availablePlaces = [1,2,3];
+          break;
+        case 1 :
+          compteur =2;
+          availablePlaces = [2,3];
+          break;
+        case 2:
+          compteur =2;
+          availablePlaces = [1,3];
+          break;
+        case 3 :
+          compteur =1;
+          availablePlaces = [3];
+          break;
+        case 4:
+          compteur =2;
+          availablePlaces = [1,2];
+          break;
+        case 5 :
+          compteur =1;
+          availablePlaces = [2];
+          break;
+        case 6:
+          compteur =1;
+          availablePlaces = [1];
+          break;
+        case 7:
+          compteur =0;
+          availablePlaces = [];
+          break;
+      }
+    }
+    console.log("Places libres :" + availablePlaces);
   }
 
 });
