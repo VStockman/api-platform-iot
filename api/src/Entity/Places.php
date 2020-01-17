@@ -29,9 +29,10 @@ class Places
     private $available;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Parking", inversedBy="places")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $parking_name;
+    private $parking;
 
     public function getId(): ?int
     {
@@ -62,14 +63,14 @@ class Places
         return $this;
     }
 
-    public function getParkingName(): ?string
+    public function getParking(): ?Parking
     {
-        return $this->parking_name;
+        return $this->parking;
     }
 
-    public function setParkingName(string $parking_name): self
+    public function setParking(?Parking $parking): self
     {
-        $this->parking_name = $parking_name;
+        $this->parking = $parking;
 
         return $this;
     }
