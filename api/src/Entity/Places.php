@@ -28,6 +28,11 @@ class Places
      */
     private $available;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $parking_name;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +58,18 @@ class Places
     public function setAvailable(bool $available): self
     {
         $this->available = $available;
+
+        return $this;
+    }
+
+    public function getParkingName(): ?string
+    {
+        return $this->parking_name;
+    }
+
+    public function setParkingName(string $parking_name): self
+    {
+        $this->parking_name = $parking_name;
 
         return $this;
     }
