@@ -28,6 +28,12 @@ class Places
      */
     private $available;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Parking", inversedBy="places")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $parking;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +59,18 @@ class Places
     public function setAvailable(bool $available): self
     {
         $this->available = $available;
+
+        return $this;
+    }
+
+    public function getParking(): ?Parking
+    {
+        return $this->parking;
+    }
+
+    public function setParking(?Parking $parking): self
+    {
+        $this->parking = $parking;
 
         return $this;
     }
