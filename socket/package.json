@@ -12,6 +12,7 @@
     "xbee-api": "^0.6.0"
   },
   "devDependencies": {
-    "cross-env": "^3.2.4"
+    "cross-env": "^3.2.4",
+    "request": "^2.88.0"
   }
 }
