@@ -1,4 +1,4 @@
-# api-platform-iot
+# Park-King
 
 This project has been done by ElMehdi BELHADRI, Alexandre LORIER, Rémi MASSENYA and Valentin STOCKMAN.
 
