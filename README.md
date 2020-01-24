@@ -1,5 +1,5 @@
 # api-platform-iot
-[Image of our project](https://www.imageupload.net/upload-image/2020/01/24/icon.jpg)
+![Image of our project](https://www.imageupload.net/upload-image/2020/01/24/icon.jpg)
 
 This project has been done by ElMehdi BELHADRI, Alexandre LORIER, Rémi MASSENYA and Valentin STOCKMAN.
 
