@@ -8,14 +8,14 @@ This IOT system permitt to see wich place of a car park is taken.
 When a car is on a place, a red light on the ceilling overhead the place lights and, in the app, we can exactly saw wich place is taken.
 
 
-IF YOU ARE ON WINDOWS 10 NO PRO :
+IF YOU ARE ON WINDOWS 10 Familly or Entreprise :
 You must install docker toolbox : https://github.com/docker/toolbox/releases
 
 FOR THE OTHERS :
 You must install docker : https://hub.docker.com/?overlay=onboarding
 
-- You must install nodejs : https://nodejs.org/en/download/
-- You must install npm (For the packages) : https://www.npmjs.com/get-npm
-- You must install webstorm (ide nodejs) : https://www.jetbrains.com/webstorm/download/#section=windows
-- You must install flutter (framework for langage dart) : https://flutter.dev/docs/get-started/install
-- You must install android studio (ide flutter) : https://developer.android.com/studio
+- You must install nodejs (for the socket) : https://nodejs.org/en/download/
+- You must install npm (for the packages) : https://www.npmjs.com/get-npm
+- You must install webstorm (IDE nodejs) : https://www.jetbrains.com/webstorm/download/#section=windows
+- You must install flutter (framework for Dart langage) : https://flutter.dev/docs/get-started/install
+- You must install android studio (IDE for flutter and device simulator) : https://developer.android.com/studio
