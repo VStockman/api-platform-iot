@@ -33,3 +33,5 @@ After that, run docker on your computer, and type this two command one after one
 So now you can start **socket/server.js** .
 
 Then you can open the mobile folder with **Android Studio**, [create your simulated device](https://developer.android.com/studio/run/managing-avds), and run the **/lib/main.dart**.
+
+That's it !
