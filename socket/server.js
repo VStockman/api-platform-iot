@@ -8,7 +8,7 @@ const xbeeAPI = new xbee_api.XBeeAPI({
 });
 
 let availablePlaces = [1,2,3];
-const serialport = new SerialPort("COM3", {
+const serialport = new SerialPort("/dev/tty.SLAB_USBtoUART", {
   baudRate: 9600,
 }, function (err) {
   if (err) {
@@ -20,7 +20,7 @@ serialport.pipe(xbeeAPI.parser);
 xbeeAPI.builder.pipe(serialport);
 
 serialport.on("open", function () {
-  var frame_obj = { 
+  var frame_obj = {
     type: C.FRAME_TYPE.AT_COMMAND,
     command: "NI",
     commandParameter: [],
@@ -40,7 +40,6 @@ serialport.on("open", function () {
 xbeeAPI.parser.on("data", function (frame) {
 
   if (C.FRAME_TYPE.ZIGBEE_RECEIVE_PACKET === frame.type) {
-
     let dataReceived = String.fromCharCode.apply(null, frame.data);
     console.log(dataReceived);
     browserClient && browserClient.emit('pad-event', {
@@ -89,20 +88,20 @@ xbeeAPI.parser.on("data", function (frame) {
         let id;
         switch (i) {
           case 1 :
-            id =3;
+            id =7;
             break;
           case 2:
-            id = 4;
+            id = 8;
             break;
           case 3:
-            id = 5;
+            id = 9;
             break;
         }
-        const url = 'https://192.168.99.100:8443/places/' + id;
+        const url = 'https://localhost:8443/places/' + id;
         const body = JSON.stringify({
           "number": i,
           "available": availablePlaces.includes(i),
-          "parking": "/parkings/1"
+          "parking": "/parkings/2"
         });
         request(
           {
