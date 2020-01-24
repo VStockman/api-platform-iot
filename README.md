@@ -1,5 +1,4 @@
 # api-platform-iot
-![Image of our project](https://www.imageupload.net/upload-image/2020/01/24/icon.jpg)
 
 This project has been done by ElMehdi BELHADRI, Alexandre LORIER, Rémi MASSENYA and Valentin STOCKMAN.
 
@@ -33,5 +32,7 @@ After that, run docker on your computer, and type this two command one after one
 So now you can start **socket/server.js** .
 
 Then you can open the mobile folder with **Android Studio**, [create your simulated device](https://developer.android.com/studio/run/managing-avds), and run the **/lib/main.dart**.
+
+![Image of our project](https://www.imageupload.net/upload-image/2020/01/24/icon.jpg)
 
 That's it !
